@@ -1,0 +1,35 @@
+﻿@{
+    ViewBag.Title = "Restaurant List";
+}
+
+@model IEnumerable<string>
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width" />
+</head>
+
+<body>
+    <div class="text-center">
+        <header>
+            <h1>Top 5 Restaurants of Provo</h1>
+            <h4>This site ranks the top 5 restaurants in Provo based solely on my own opinion</h4>
+            <img src="~/img/provo.jpg" width="900" />
+            <br />
+            <br />
+        </header>
+    </div>
+
+    <div class="list-group">
+        <ul>
+            @foreach (string i in Model)
+            {
+                <li class="list-group-item-light">@i</li>
+                <br />
+            }
+        </ul>
+    </div>
+</body>
+</html>

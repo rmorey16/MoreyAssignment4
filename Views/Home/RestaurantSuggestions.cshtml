@@ -1,0 +1,35 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewBag.Title = "Your Suggestions";
+}
+
+@model IEnumerable<MoreyAssignment4.Models.EntryResponse>
+
+<div>
+    <h2>Here are the current movies and all their information</h2>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Recommended By</th>
+                <th>Restaurant Name</th>
+                <th>Their Favorite Dish</th>
+                <th>Restaurant Phone Number</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            @foreach (MoreyAssignment4.Models.EntryResponse x in Model)
+            {
+                <tr>
+                    <td>@x.personName</td>
+                    <td>@x.restaurantName</td>
+                    <td>@x.Dish</td>
+                    <td>@x.phoneNumber</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

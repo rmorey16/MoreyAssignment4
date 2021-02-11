@@ -1,0 +1,34 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewBag.Title = "Suggest a Restaurant!";
+}
+
+@model MoreyAssignment4.Models.EntryResponse
+
+<form asp-action="ResForm" method="post">
+    <div>
+        <label asp-for="personName">Your Name: </label>
+        <input asp-for="personName" />
+    </div>
+
+    <div>
+        <label asp-for="restaurantName">Restaurant Name: </label>
+        <input asp-for="restaurantName" />
+    </div>
+
+    <div>
+        <label asp-for="Dish">Your Favorite Dish: </label>
+        <input asp-for="Dish" />
+    </div>
+
+    <div>
+        <label asp-for="phoneNumber">Restaurant Phone Number: </label>
+        <input asp-for="phoneNumber" />
+    </div>
+
+    <br />
+    <button type="submit">Submit the Suggestion</button>
+    <div asp-validation-summary="All"></div>
+</form>

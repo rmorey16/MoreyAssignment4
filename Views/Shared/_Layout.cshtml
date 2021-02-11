@@ -1,0 +1,21 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Top 5 Restaurants in Provo</title>
+    <meta name="viewport" content="width=device-width" />
+    <link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="text-center">
+        <h1>@ViewBag.Title</h1>
+        <a asp-action="Index">Home</a>
+        <br />
+        <a asp-action="ResForm">Suggest a Restaurant</a>
+        <br />
+        <a asp-action="RestaurantSuggestions">See Where Others Recommend</a>
+    </div>
+    @RenderBody()
+    <footer>Rachel Morey copyright 2021</footer>
+</body>
+</html>
