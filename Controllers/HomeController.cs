@@ -19,14 +19,22 @@ namespace MoreyAssignment4.Controllers
         }
         public IActionResult Index()
         {
-            List<string> resList = new List<string>();
-
-            foreach (Restaurant r in Restaurant.GetRestaurant())
+            if (ModelState.IsValid)
             {
-                resList.Add($"#{r.ResRanking}: {r.ResName} located at {r.ResAddress}. The favorite dish is: {r.FavDish}. You can contact them here: {r.ResPhone} or their website: {r.ResLink}");
-            }
+               List<string> resList = new List<string>();
 
-            return View(resList);
+                foreach (Restaurant r in Restaurant.GetRestaurant())
+                {
+                    resList.Add($"#{r.ResRanking}: {r.ResName} located at {r.ResAddress}. The favorite dish is: {r.FavDish}. You can contact them here: {r.ResPhone} or their website: {r.ResLink}");
+                }
+
+                return View(resList); 
+            }
+            else
+            {
+                return View();
+            }
+            
         }
         [HttpGet]
         public IActionResult ResForm()
